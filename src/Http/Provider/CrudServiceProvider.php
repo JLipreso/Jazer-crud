@@ -16,8 +16,8 @@ class CrudServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->publishes([
-            __DIR__ . '/../../../config/config.php' => config_path('crudconfig.php')
-        ], 'crudconfig-config');
+            __DIR__ . '/../../../config/config.php' => config_path('jazercrudconfig.php')
+        ], 'jazercrudconfig-config');
         
         $this->loadRoutesFrom( __DIR__ . '/../../../routes/api.php');
 
