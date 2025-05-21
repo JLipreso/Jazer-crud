@@ -1,0 +1,26 @@
+{
+    "name": "jazer/crud",
+    "description": "Jazer package to handle crud API request",
+    "type": "package",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Jazer\\Crud\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel":{
+            "providers": [
+                "Jazer\\Crud\\Http\\Provider\\CrudServiceProvider"
+            ]
+        }
+    },
+    "authors": [
+        {
+            "name": "Jazer Tech Solution"
+        }
+    ],
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require": {}
+}

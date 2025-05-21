@@ -1,0 +1,7 @@
+Installation:
+
+composer require jazer/crud:dev-main
+php artisan vendor:publish --tag=crudconfig-config
+
+crud/
+
