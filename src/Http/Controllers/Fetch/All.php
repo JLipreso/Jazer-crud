@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\util_query;
+namespace Jazer\Crud\Http\Controllers\Fetch;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;

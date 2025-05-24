@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Jazer\Users\Http\Controllers\Utility;
+namespace Jazer\Crud\Http\Controllers\Utility;
 
 use App\Http\Controllers\Controller;
 
 /**
- * \Jazer\Users\Http\Controllers\Utility\ReferenceID::create('AUT');
+ * \Jazer\Crud\Http\Controllers\Utility\ReferenceID::create('AUT');
  */
 
 class ReferenceID extends Controller

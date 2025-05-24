@@ -1,14 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\util_query;
+namespace Jazer\Users\Http\Controllers\Update;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
-/**
- * 
- */
 
 class Update extends Controller
 {

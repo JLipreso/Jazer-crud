@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\util_query;
+namespace Jazer\Users\Http\Controllers\InsertGetID;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class InsertGetID extends Controller
+class Insert extends Controller
 {
-    public static function insertGetID(Request $request) {
+    public static function insert(Request $request) {
         $dataid     = DB::connection($request['connection'])
                     ->table($request["table"])
                     ->insertGetId($request['columns']); 
