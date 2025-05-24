@@ -8,28 +8,17 @@ use Illuminate\Support\Facades\DB;
 
 class Paginate extends Controller
 {
-    public static function paginate(Request $request) {
+    public static function fetch(Request $request) {
 
-        if((isset($request['where'])) && ($request['where'] !== null )) {
-            return DB::connection("conn_users")
-            ->table("people")
-            ->select("project_refid", "people_group_refid", "people_refid", "firstname", "lastname", "email", "blocked", "active")
-            ->where([
-                "project_refid"     => config('usersconfig.project_refid')
-            ])
-            ->where(json_decode($request['where']))
-            ->orderBy("lastname", "ASC")
-            ->paginate(config('usersconfig.fetch_paginate_max'));
-        }
-        else {
-            return DB::connection("conn_users")
-            ->table("people")
-            ->select("project_refid", "people_group_refid", "people_refid", "firstname", "lastname", "email", "blocked", "active")
-            ->where([
-                "project_refid"     => config('usersconfig.project_refid')
-            ])
-            ->orderBy("lastname", "ASC")
-            ->paginate(config('usersconfig.fetch_paginate_max'));
-        }
+        $orderby    = json_decode($request['orderby']);
+        $where      = json_decode($request['where']);
+
+        $source     = DB::connection($request['connection'])
+                    ->table($request['table'])
+                    ->where($where)
+                    ->orderBy($orderby[0], $orderby[1])
+                    ->paginate($request['per_page']);
+
+        return $source;
     }
 }

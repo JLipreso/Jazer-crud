@@ -8,28 +8,18 @@ use Illuminate\Support\Facades\DB;
 
 class Delete extends Controller
 {
-    public static function delete($people_refid) {
-        $deleted = DB::connection("conn_users")->table("people")
-            ->where([
-                "project_refid"     => config('usersconfig.project_refid'),
-                "people_refid"      => $people_refid
-            ])
-            ->delete();
-
+    public static function delete(Request $request) {
+        $deleted = DB::connection($request['conn'])->table($request["table"])->where(json_decode($request['where']))->delete();
         if($deleted) {
-            DB::connection("conn_users")->table("people_auth")
-            ->where([
-                "project_refid"     => env('project_refid'),
-                "people_refid"      => $people_refid
-            ])
-            ->delete();
             return [
-                "success"   => true
+                "success"   => true,
+                "message"   => "Deleted successfully"
             ];
         }
         else {
             return [
-                "success"   => false
+                "success"   => false,
+                "message"   => "Fail to deleted"
             ];
         }
     }
