@@ -1,6 +1,6 @@
 <?php
 
-namespace Jazer\Users\Http\Controllers\InsertGetID;
+namespace Jazer\Crud\Http\Controllers\InsertGetID;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;

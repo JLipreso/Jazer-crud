@@ -1,6 +1,6 @@
 <?php
 
-namespace Jazer\Users\Http\Controllers\Fetch;
+namespace Jazer\Crud\Http\Controllers\Fetch;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -12,7 +12,7 @@ class Single extends Controller
         $orderby = json_decode($request['orderby']);
         return DB::connection($request['connection'])->table($request['table'])
             ->where(json_decode($request['where']))
-            ->get();
+            ->first();
     }
 }
 

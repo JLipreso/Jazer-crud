@@ -1,6 +1,6 @@
 <?php
 
-namespace Jazer\Users\Http\Controllers\Update;
+namespace Jazer\Crud\Http\Controllers\Update;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
